@@ -1,19 +1,19 @@
 const ulCollection = Array.from(document.getElementsByClassName("dropdown__list"));
-const JsElem = Array.from(document.getElementsByClassName("dropdown__value"));
+const jsElem = Array.from(document.getElementsByClassName("dropdown__value"));
 const link = Array.from(document.getElementsByClassName("dropdown__link"));
 const dropDownContext = Array.from(document.getElementsByClassName('dropdown__value'));
 
 function hidder() {
     ulCollection.forEach(ul => {
-        ul.classList.toggle('dropdown__list_active');
+        ul.classList.add('dropdown__list_active');
 
     });
 };
 
-JsElem.forEach(element => {
+jsElem.forEach(element => {
 
     element.addEventListener("click", () => {
-        this.hidder();
+        hidder();
 
     })
 
@@ -24,7 +24,7 @@ link.forEach(linkElement => {
         event.preventDefault();
         dropDownContext.forEach(dropElement => {
             dropElement.textContent =linkElement.textContent;
-            this.hidder();
+            hidder();
         });
     })
 });
